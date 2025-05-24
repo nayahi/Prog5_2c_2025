@@ -15,7 +15,8 @@ namespace Prog5_2c_2025.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var estudiante = new Estudiante(1, "Juan Perez", 85);
+            return View(estudiante);
         }
 
         public IActionResult Privacy()
