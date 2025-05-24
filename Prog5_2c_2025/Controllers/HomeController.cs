@@ -29,5 +29,20 @@ namespace Prog5_2c_2025.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        #region Sumar 2 numeros
+        public IActionResult Suma2()
+        {
+            return View();
+        }
+        public IActionResult add2()
+        {
+            int num1 = Convert.ToInt32(HttpContext.Request.Form["tx1"].ToString());
+            int num2 = Convert.ToInt32(HttpContext.Request.Form["tx2"].ToString());
+            int result = num1 + num2;
+            ViewBag.SumResult2 = result.ToString();
+            return View("Suma2");
+        }
+        #endregion Sumar 2 numeros
     }
 }
